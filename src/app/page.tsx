@@ -1,4 +1,5 @@
-import MirrorTable from "@/components/MirrorTable";
+import MirrorTable, { SkeletonTable } from "@/components/MirrorTable";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Box } from "lucide-react";
 import { Suspense } from "react";
 
@@ -9,7 +10,7 @@ export default function Home() {
         <div className="text-lg font-bold flex gap-1 items-center pb-4">
           <Box /> 镜像列表
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<SkeletonTable />}>
           <MirrorTable />
         </Suspense>
       </div>
