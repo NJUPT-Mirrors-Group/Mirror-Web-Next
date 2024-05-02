@@ -17,7 +17,6 @@ const getSyncData = async () => {
   const res = await axios.get(
     "https://gist.githubusercontent.com/MaxtuneLee/fefea9647da5b8ac9ebbc08399d9f68a/raw/9dac9e9a745373d12e3cd7008db4e63462baeb7a/mirrordsync.json",
   );
-  console.log(res);
   return res.data;
 };
 const getSyncStatusVariant = (status: string) => {
@@ -35,7 +34,6 @@ const getSyncStatusVariant = (status: string) => {
 const MirrorTable = async () => {
   const data: MirrorSyncList = await getSyncData();
   const time = dayjs();
-  console.log(data);
   return (
     <>
       <Table className="w-full">

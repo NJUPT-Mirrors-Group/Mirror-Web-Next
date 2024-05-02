@@ -13,6 +13,9 @@ const Header = () => {
           <Link href="/" className="hover:text-gray-700">
             镜像列表
           </Link>
+          <Link href="/downloads" className="hover:text-gray-700">
+            软件下载
+          </Link>
           <Link href="/notice" className="hover:text-gray-700">
             公告
           </Link>
