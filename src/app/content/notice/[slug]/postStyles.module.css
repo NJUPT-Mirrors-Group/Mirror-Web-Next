@@ -21,5 +21,36 @@
     padding-left: 0.4rem;
     padding-right: 0.4rem;
     color: #0090d1;
+    &:hover {
+      color: #5ea5f0;
+    }
+  }
+  & p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 2rem;
+  }
+  & ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  & ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  & blockquote {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  & pre {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  & code {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.2rem;
+    background-color: #f4f4f4;
+    border-radius: 0.3rem;
   }
 }

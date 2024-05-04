@@ -1,51 +1,67 @@
 import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/content";
 import styles from "./postStyles.module.css";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 export async function generateStaticParams() {
-  const posts = getPostSlugs();
-  console.log(posts);
+	const posts = await getPostSlugs();
 
-  return posts.map((post) => ({
-    slug: post,
-  }));
+	return posts.dirContent.map((post) => ({
+		slug: post,
+	}));
 }
 
 export default async function Post({ params }: Params) {
-  const post = await getPostBySlug(params.slug + ".mdx");
+	const posts = await getPostSlugs();
+	const post = await getPostBySlug(
+		`${params.slug}.${posts.extMap.get(params.slug)}`,
+	);
 
-  console.log(params);
-  return (
-    <main>
-      <h1 className="text-4xl font-semibold">{post.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{ __html: post.html }}
-        className={styles["markdown"]}
-      ></div>
-    </main>
-  );
+	return (
+		<main className="space-y-5">
+			<Button variant="ghost" className="-translate-x-3 group mb-3" asChild>
+				<Link href="/content/notice" className="flex gap-2">
+					<div className="translate-x-0 group-hover:-translate-x-1 transition-all">
+						<MoveLeft />
+					</div>{" "}
+					返回
+				</Link>
+			</Button>
+			<h1 className="text-4xl font-semibold">{post.title}</h1>
+			<div
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+				dangerouslySetInnerHTML={{ __html: post.html }}
+				className={styles.markdown}
+			/>
+		</main>
+	);
 }
 
 type Params = {
-  params: {
-    slug: string;
-  };
+	params: {
+		slug: string;
+	};
 };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug + ".mdx");
+	const posts = await getPostSlugs();
+	const post = await getPostBySlug(
+		`${params.slug}.${posts.extMap.get(params.slug)}`,
+	);
 
-  if (!post) {
-    return notFound();
-  }
+	if (!post) {
+		return notFound();
+	}
 
-  const title = `${post.title} | 南京邮电大学开源软件镜像站`;
+	const title = `${post.title} | 南京邮电大学开源软件镜像站`;
 
-  return {
-    title,
-    openGraph: {
-      title,
-    },
-  };
+	return {
+		title,
+		openGraph: {
+			title,
+		},
+	};
 }

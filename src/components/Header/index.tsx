@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Header = () => {
   return (
-    <div className="w-full">
+    <div className="z-50 w-full h-[92px] fixed top-0 bg-[#ffffff7a] backdrop-blur-lg shadow-sm">
       <div className="mx-auto flex gap-3 max-w-7xl">
         <div className="flex items-center gap-3 p-5">
           <Image src="/logo-small.png" alt="logo" width={50} height={50} />

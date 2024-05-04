@@ -6,4 +6,5 @@ export type Post = {
   description: string;
   html: string;
   links: string[];
+  category: string;
 };
