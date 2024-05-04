@@ -1,0 +1,25 @@
+.markdown {
+  & h1 {
+    font-size: 24px;
+  }
+  & h2 {
+    font-size: 20px;
+  }
+  & h3 {
+    font-size: 18px;
+  }
+  & h4 {
+    font-size: 16px;
+  }
+  & h5 {
+    font-size: 14px;
+  }
+  & h6 {
+    font-size: 12px;
+  }
+  & a {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    color: #0090d1;
+  }
+}

@@ -16,7 +16,7 @@ const Header = () => {
           <Link href="/downloads" className="hover:text-gray-700">
             软件下载
           </Link>
-          <Link href="/notice" className="hover:text-gray-700">
+          <Link href="/content/notice" className="hover:text-gray-700">
             公告
           </Link>
         </div>
