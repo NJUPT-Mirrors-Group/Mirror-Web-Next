@@ -16,7 +16,7 @@ export default async function List({ distro }: { distro: string }) {
 						<ul className="flex flex-col gap-2 w-full">
 							{isoData.urls.map((iso, index) => (
 								<li key={`iso${iso.name}${index}`}>
-									<div className="border-[1px] rounded-lg border-gray-200 border-solid p-4 flex justify-between items-center hover:shadow-sm hover:border-gray-400 transition-all duration-200 ease-in-out">
+									<div className="border-[1px] rounded-lg border-gray-200 border-solid p-4 flex justify-between items-center hover:shadow-sm hover:border-blue-400 transition-all duration-200 ease-in-out">
 										<div>
 											<h3 className="text-base font-semibold">{iso.name}</h3>
 											<div className="flex gap-2 mt-2">

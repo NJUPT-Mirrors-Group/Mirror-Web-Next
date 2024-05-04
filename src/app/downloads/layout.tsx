@@ -1,5 +1,5 @@
 import { Box, Download } from "lucide-react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "南京邮电大学开源软件镜像站",

@@ -15,7 +15,7 @@ export default async function Home() {
 						<Link
 							href={`/content/notice/${value.slug}`}
 							key={`postlist-${value.slug}`}
-							className="border-[1px] rounded-lg border-gray-200 border-solid p-4 flex justify-between flex-col hover:shadow-sm hover:border-gray-400 transition-all duration-200 ease-in-out space-y-2"
+							className="border-[1px] rounded-lg border-gray-200 border-solid p-4 flex justify-between flex-col hover:shadow-sm hover:border-blue-400 transition-all duration-200 ease-in-out space-y-2"
 						>
 							<div className="space-y-1">
 								<div className="text-sm text-blue-600">{value.category}</div>
