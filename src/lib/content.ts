@@ -24,7 +24,7 @@ export async function getPostSlugs() {
     const ext = file.split(".") as string[];
     extMap.set(ext[0], ext[1]);
   }
-  return { dirContent, extMap };
+  return { dirContent: dirContent.map((value) => value.replace(/.mdx?$/, "")), extMap };
 }
 
 /**
@@ -53,7 +53,7 @@ export async function getPostBySlug(filename: string) {
 export async function getAllPosts(): Promise<Post[]> {
   const slugs = await getPostSlugs();
   const posts = await Promise.all(
-    slugs.dirContent.map(async (slug) => await getPostBySlug(slug)),
+    slugs.dirContent.map(async (slug) => await getPostBySlug(`${slug}.${slugs.extMap.get(slug)}`)),
   );
   // sort posts by date in descending order
   const sortedPosts = posts.sort((a, b) => (a.date > b.date ? -1 : 1));
