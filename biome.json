@@ -1,0 +1,11 @@
+{
+    "linter": {
+        "rules": {
+            "suspicious": {
+                "noArrayIndexKey": {
+                    "level": "warn"
+                }
+            }
+        }
+    }
+}

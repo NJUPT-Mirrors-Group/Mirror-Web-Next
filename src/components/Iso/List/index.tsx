@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default async function List({ distro }: { distro: string }) {
 	const isoData = await getIsoByDistro(distro);
 	return (
-		<div className="col-span-7 px-8 ">
+		<div className="col-span-8 mt-3 md:px-8 md:col-span-7 md:mt-0">
 			<div className="text-lg font-bold">{distro}</div>
 			<div className="mt-2">
 				{isoData ? (
@@ -48,17 +48,12 @@ export default async function List({ distro }: { distro: string }) {
 
 export const ListSkeleton = ({ distro }: { distro: string }) => {
 	return (
-		<div className="col-span-7 px-8 ">
+		<div className="col-span-8 mt-3 md:px-8 md:col-span-7 md:mt-0">
 			<div className="text-lg font-bold">{distro}</div>
 			<div className="mt-2">
 				<ul className="flex flex-col gap-2 w-full">
 					{Array.from({ length: 5 }).map((_, index) => (
-						<li
-							key={`loading${
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								index
-							}`}
-						>
+						<li key={`loading${index}`}>
 							<div className="border-[1px] rounded-lg border-gray-200 border-solid p-4 flex justify-between items-center">
 								<div>
 									<h3 className="text-base font-semibold">

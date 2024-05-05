@@ -13,6 +13,7 @@
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.3",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "@rspress/mdx-rs": "^0.5.4",
     "@types/mdx": "^2.0.13",
@@ -30,7 +31,8 @@
     "remark-html": "^16.0.1",
     "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^0.9.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.2",
