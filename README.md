@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src='./public/logo-small.png' width="100" />
 
-## Getting Started
+# NJUPT Mirror Web
 
-First, run the development server:
+南京邮电大学开源软件镜像站网页端
 
+![intro](./public/intro.jpg)
+
+## 开发技术栈
+
+- React
+- Tailwind CSS
+- MDX
+
+## 开发指南
+
+### 目录结构
+
+- src: 源码
+- content: 网站内容
+- public: 网站静态资源
+
+### 开发前准备
+
+- Nvim：安装 Biome LSP
+- VScode：安装 Biome 插件
+- 使用 Node 版本 ^20
+- 使用 PNPM 作为包管理器 ^9
+
+安装所需依赖
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+启动调试
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 编译与部署
+```bash
+pnpm build
+```
+将 `package.json`、`pnpm-lock.yaml`、`.next` 一起打包，上传服务器，可以使用 `pm2`，也可以直接
+```bash
+pnpm start
+```
+启动生产环境
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 内容维护
+网站的所有内容都在 content 中，可以创建不同的文件夹作为不同的分类，比如 News、Help等，Help 会自动与镜像联动，支持使用 Markdown 与 MDX
