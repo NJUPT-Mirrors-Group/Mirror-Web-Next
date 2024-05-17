@@ -1,13 +1,11 @@
-import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/content";
+import { getAllPosts, getPostBySlug, getAllPostSlugs } from "@/lib/content";
 import styles from "./postStyles.module.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { MoveLeft } from "lucide-react";
-import Link from "next/link";
+import { GoBack } from "@/components/GoBack";
 
 export async function generateStaticParams() {
-	const posts = await getPostSlugs();
+	const posts = await getAllPostSlugs();
 
 	return posts.dirContent.map((post) => ({
 		slug: post,
@@ -15,21 +13,13 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }: Params) {
-	const posts = await getPostSlugs();
-	const post = await getPostBySlug(
-		`${params.slug}.${posts.extMap.get(params.slug)}`,
-	);
+	const posts = await getAllPostSlugs();
+	const postName = `${params.category}/${params.slug}.${posts.extMap.get(params.category + "/" + params.slug)}`;
+	const post = await getPostBySlug(postName);
 
 	return (
 		<main className="space-y-5">
-			<Button variant="ghost" className="-translate-x-3 group mb-3" asChild>
-				<Link href="/content/notice" className="flex gap-2">
-					<div className="translate-x-0 group-hover:-translate-x-1 transition-all">
-						<MoveLeft />
-					</div>{" "}
-					返回
-				</Link>
-			</Button>
+			<GoBack />
 			<h1 className="text-4xl font-semibold">{post.title}</h1>
 			<div
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
@@ -43,14 +33,14 @@ export default async function Post({ params }: Params) {
 type Params = {
 	params: {
 		slug: string;
+		category: string;
 	};
 };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-	const posts = await getPostSlugs();
-	const post = await getPostBySlug(
-		`${params.slug}.${posts.extMap.get(params.slug)}`,
-	);
+	const posts = await getAllPostSlugs();
+	const postName = `${params.category}/${params.slug}.${posts.extMap.get(params.category + "/" + params.slug)}`;
+	const post = await getPostBySlug(postName);
 
 	if (!post) {
 		return notFound();
