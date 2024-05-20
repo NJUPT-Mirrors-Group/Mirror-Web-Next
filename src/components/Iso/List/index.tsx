@@ -6,10 +6,11 @@ import { Download, DownloadCloud } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default async function List({ distro }: { distro: string }) {
-	const isoData = await getIsoByDistro(distro);
+	const decodedDistro = distro ? decodeURIComponent(distro) : "";
+	const isoData = await getIsoByDistro(decodedDistro);
 	return (
 		<div className="col-span-8 mt-3 md:px-8 md:col-span-7 md:mt-0">
-			<div className="text-lg font-bold">{distro}</div>
+			<div className="text-lg font-bold">{decodedDistro}</div>
 			<div className="mt-2">
 				{isoData ? (
 					<>
