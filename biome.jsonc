@@ -1,0 +1,15 @@
+{
+	"files": {
+		// All tools, including the formatter, ignore following files
+		"ignore": ["node_modules/**", ".next/**", "next-env.d.ts"]
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noArrayIndexKey": {
+					"level": "warn"
+				}
+			}
+		}
+	}
+}
