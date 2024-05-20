@@ -54,7 +54,7 @@ const MirrorTable = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((item) => {
+          {data.sort((a, b) => a.name.localeCompare(b.name)).map((item) => {
             return (
               <TableRow key={item.name}>
                 <TableCell className="font-medium">
