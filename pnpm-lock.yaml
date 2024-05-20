@@ -30,8 +30,8 @@ dependencies:
     specifier: ^2.0.13
     version: 2.0.13
   axios:
-    specifier: ^1.6.8
-    version: 1.6.8
+    specifier: ^1.7.0
+    version: 1.7.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1687,8 +1687,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
+  /axios@1.7.0:
+    resolution: {integrity: sha512-IiB0wQeKyPRdsFVhBgIo31FbzOyf2M6wYl7/NVutFwFBRMiAbjNiydJIHKeLmPugF4kJLfA1uWZ82Is2QzqqFA==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0

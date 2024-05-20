@@ -17,7 +17,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@rspress/mdx-rs": "^0.5.4",
     "@types/mdx": "^2.0.13",
-    "axios": "^1.6.8",
+    "axios": "^1.7.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
