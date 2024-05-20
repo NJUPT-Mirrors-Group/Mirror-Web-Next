@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
     "gray-matter": "^4.0.3",
-    "lucide-react": "^0.376.0",
+    "lucide-react": "^0.378.0",
     "million": "^3.0.6",
     "next": "14.2.3",
     "react": "^18",
