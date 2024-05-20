@@ -37,7 +37,17 @@ pnpm dev
 ```
 
 ### 编译与部署
-网站可以使用 Docker 部署，使用 Next standalone 模式，可以直接使用以下命令构建与运行
+直接编译
+```bash
+pnpm build
+```
+将 `package.json`、`pnpm-lock.yaml`、`.next` 一起打包，上传服务器，可以使用 `pm2`，也可以直接
+```bash
+pnpm start
+```
+启动生产环境
+
+或者使用 Docker 部署，使用 Next standalone 模式，使用以下命令构建与运行
 ```bash
 docker build -t mirror-web-next .
 docker run -p 3000:3000 --name mirror-web-next mirror-web-next

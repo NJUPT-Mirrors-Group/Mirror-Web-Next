@@ -6,7 +6,7 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["@rspress/mdx-rs"],
   },
-  output: "standalone",
+  ...(process.env.OUTPUT_STANDALONE && { output: "standalone" }),
 };
 const millionConfig = {
   auto: {

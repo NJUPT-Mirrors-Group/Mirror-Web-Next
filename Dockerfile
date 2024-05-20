@@ -6,6 +6,7 @@ WORKDIR /app
 FROM base AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+ENV OUTPUT_STANDALONE="1"
 RUN corepack enable
 COPY . /app
 RUN pnpm install --frozen-lockfile
