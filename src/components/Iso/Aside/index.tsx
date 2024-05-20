@@ -14,17 +14,21 @@ const Aside = async ({ distro }: { distro: string }) => {
 	return (
 		<aside className="col-span-8 md:col-span-1">
 			<Accordion type="single" collapsible defaultValue="0">
-				{Object.keys(categoryData).map((item, index) => (
-					<AccordionItem value={index.toString()} key={index}>
-						<AccordionTrigger>{item}</AccordionTrigger>
-						<AccordionContent className="flex flex-col items-start">
-							{categoryData[item].map((item, index) => (
-								<Button key={`distro-${item}${index}`} variant="ghost">
-									<Link href={`/downloads/${item.distro}`}>{item.distro}</Link>
-								</Button>
-							))}
-						</AccordionContent>
-					</AccordionItem>
+				{Object.keys(categoryData)
+					.sort((a, b) => a.localeCompare(b))
+					.map((item, index) => (
+						<AccordionItem value={index.toString()} key={index}>
+							<AccordionTrigger>{item}</AccordionTrigger>
+							<AccordionContent className="flex flex-col items-start">
+								{categoryData[item]
+									.sort((a, b) => a.distro.localeCompare(b.distro))
+									.map((item, index) => (
+										<Button key={`distro-${item}${index}`} variant="ghost">
+											<Link href={`/downloads/${item.distro}`}>{item.distro}</Link>
+										</Button>
+								))}
+							</AccordionContent>
+						</AccordionItem>
 				))}
 			</Accordion>
 		</aside>
