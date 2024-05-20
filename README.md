@@ -37,6 +37,7 @@ pnpm dev
 ```
 
 ### 编译与部署
+直接编译
 ```bash
 pnpm build
 ```
@@ -45,6 +46,12 @@ pnpm build
 pnpm start
 ```
 启动生产环境
+
+或者使用 Docker 部署，使用 Next standalone 模式，使用以下命令构建与运行
+```bash
+docker build -t mirror-web-next .
+docker run -p 3000:3000 --name mirror-web-next mirror-web-next
+```
 
 ## 内容维护
 网站的所有内容都在 content 中，可以创建不同的文件夹作为不同的分类，比如 News、Help等，Help 会自动与镜像联动，支持使用 Markdown 与 MDX
