@@ -3,7 +3,7 @@ category: help
 mirrorid: archlinux
 title: ArchLinux
 author: Liujian Gu
-slug: 1970-01-01-archlinux
+slug: archlinux
 date: 1970-01-01
 description: Arch Linux 软件仓库镜像使用帮助
 ---
