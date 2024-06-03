@@ -24,7 +24,7 @@
 		"dayjs": "^1.11.11",
 		"gray-matter": "^4.0.3",
 		"lucide-react": "^0.379.0",
-		"million": "^3.1.6",
+		"million": "^3.1.7",
 		"next": "14.2.3",
 		"react": "^18",
 		"react-dom": "^18",
